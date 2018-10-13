@@ -22,49 +22,25 @@ class LeftPanel extends React.Component {
       yearofdeath: []
     }
   }
-  getSelectedCountriesList(listOfSelectedCountries) {
-    this.setState({countries: listOfSelectedCountries});
-    debugger;
-  };
 
-  getSelectedStatesList(listOfSelectedStates) {
-    this.setState({states: listOfSelectedStates});
-    debugger;
-  };
-
-  getSelectedCitiesList(listOfSelectedCities) {
-    this.setState({cities: listOfSelectedCities});
-    debugger;
-  };
-
-  getSelectedYearOfBirthList(listOfSelectedBirthYears) {
-    this.setState({yearofbirth: listOfSelectedBirthYears});
-    debugger;
-  };
-
-  getSelectedYearOfDeathList(listOfSelectedDeathYears) {
-    this.setState({yearofdeath: listOfSelectedDeathYears});
-    debugger;
-  };
-  
   /* istanbul ignore next */
   render() {
     debugger;
     return <div>
           <div className="field-set">
-            <CountriesList getSelectedCountriesList={this.getSelectedCountriesList.bind(this)} countriesListData = {countriesListData.default}/>
+            <CountriesList getSelectedCountriesList={this.props.getSelectedCountriesList} countriesListData = {countriesListData.default}/>
           </div>
           <div className="field-set">
-            <StatesList getSelectedStatesList={this.getSelectedStatesList.bind(this)} statesListData = {statesListData.default}/>
+            <StatesList getSelectedStatesList={this.props.getSelectedStatesList} statesListData = {statesListData.default}/>
           </div>
           <div className="field-set">
-            <CitiesList getSelectedCitiesList={this.getSelectedCitiesList.bind(this)} citiesListData = {citiesListData.default}/>
+            <CitiesList getSelectedCitiesList={this.props.getSelectedCitiesList} citiesListData = {citiesListData.default}/>
           </div>
           <div className="field-set">
-            <YearOfBirth getSelectedYearOfBirthList={this.getSelectedYearOfBirthList.bind(this)} yearOfBirthData = {yearOfBirthData.default}/>
+            <YearOfBirth getSelectedYearOfBirthList={this.props.getSelectedYearOfBirthList} yearOfBirthData = {yearOfBirthData.default}/>
           </div>
           <div className="field-set">
-            <YearOfDeath getSelectedYearOfDeathList={this.getSelectedYearOfDeathList.bind(this)} yearofdeathData = {yearofdeathData.default}/>
+            <YearOfDeath getSelectedYearOfDeathList={this.props.getSelectedYearOfDeathList} yearofdeathData = {yearofdeathData.default}/>
           </div>
         </div>
   }

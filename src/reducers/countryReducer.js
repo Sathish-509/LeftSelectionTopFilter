@@ -5,7 +5,7 @@ export default (state = [], action) => {
     case FETCH_COUNTRIES:
       return state;
     case UPDATE_COUNTRIES:
-      return state.concat([action.payload]);
+      return state=action.payload;
     default:
       return state;
   }

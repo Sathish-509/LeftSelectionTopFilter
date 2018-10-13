@@ -5,7 +5,7 @@ export default (state = [], action) => {
     case FETCH_DATEOFBIRTH:
       return state;
     case UPDATE_DATEOFBIRTH:
-      return state.concat([action.payload]);
+      return state=action.payload;
     default:
       return state;
   }

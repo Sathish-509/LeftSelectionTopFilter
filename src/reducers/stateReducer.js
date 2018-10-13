@@ -5,7 +5,7 @@ export default (state = [], action) => {
     case FETCH_STATES:
       return state;
     case UPDATE_STATES:
-      return state.concat([action.payload]);
+      return state=action.payload;
     default:
       return state;
   }

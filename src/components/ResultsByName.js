@@ -1,5 +1,6 @@
 import React from 'react';
 import LeftPanel from './leftpanel/LeftPanel';
+import LeftPanelContainer from '../containers/LeftPanelContainer';
 
 class ResultsByName extends React.Component {
   /* istanbul ignore next */
@@ -7,7 +8,7 @@ class ResultsByName extends React.Component {
     debugger;
     return <div className="wrapper">
     <aside className="main_sidebar">
-        <LeftPanel/>
+        <LeftPanelContainer/>
     </aside>
 </div>
   }
