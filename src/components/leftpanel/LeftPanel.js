@@ -9,7 +9,6 @@ import * as statesListData from './../../data/states';
 import * as citiesListData from './../../data/cities';
 import * as yearOfBirthData from './../../data/yearofbirth';
 import * as yearofdeathData from './../../data/yearofdeath';
-import SearchFiltersList from './../toppanel/SearchFiltersList';
 
 class LeftPanel extends React.Component {
   constructor(props) {
@@ -25,22 +24,26 @@ class LeftPanel extends React.Component {
 
   /* istanbul ignore next */
   render() {
-    debugger;
     return <div>
           <div className="field-set">
-            <CountriesList getSelectedCountriesList={this.props.getSelectedCountriesList} countriesListData = {countriesListData.default}/>
+            <CountriesList getSelectedCountriesList={this.props.getSelectedCountriesList} countriesListData = {countriesListData.default} 
+              updatedList={this.props.updatedlistOfSelectedCountries} />
           </div>
           <div className="field-set">
-            <StatesList getSelectedStatesList={this.props.getSelectedStatesList} statesListData = {statesListData.default}/>
+            <CitiesList getSelectedCitiesList={this.props.getSelectedCitiesList} citiesListData = {citiesListData.default}
+              updatedList={this.props.updatedlistOfSelectedCities} />
           </div>
           <div className="field-set">
-            <CitiesList getSelectedCitiesList={this.props.getSelectedCitiesList} citiesListData = {citiesListData.default}/>
+            <YearOfBirth getSelectedYearOfBirthList={this.props.getSelectedYearOfBirthList} yearOfBirthData = {yearOfBirthData.default}
+              updatedList={this.props.updatedlistOfSelectedDateOfBirth} />
           </div>
           <div className="field-set">
-            <YearOfBirth getSelectedYearOfBirthList={this.props.getSelectedYearOfBirthList} yearOfBirthData = {yearOfBirthData.default}/>
+            <YearOfDeath getSelectedYearOfDeathList={this.props.getSelectedYearOfDeathList} yearofdeathData = {yearofdeathData.default}
+              updatedList={this.props.updatedlistOfSelectedDateOfDeath}/>
           </div>
           <div className="field-set">
-            <YearOfDeath getSelectedYearOfDeathList={this.props.getSelectedYearOfDeathList} yearofdeathData = {yearofdeathData.default}/>
+            <StatesList getSelectedStatesList={this.props.getSelectedStatesList} statesListData = {statesListData.default}
+              updatedList={this.props.updatedlistOfSelectedStates} />
           </div>
         </div>
   }

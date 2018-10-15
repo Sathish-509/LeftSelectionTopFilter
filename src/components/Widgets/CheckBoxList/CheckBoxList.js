@@ -6,17 +6,19 @@ class CheckBoxList extends React.Component {
     super(props);
     this.state = {selectedCheckboxes: []}
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({selectedCheckboxes: nextProps.updatedList});
+  }
   /* istanbul ignore next */
   onCheckboxListChange(listofCheckedBoxes) {
-    debugger;
     this.setState({selectedCheckboxes: listofCheckedBoxes});
     this.props.getSelectedCheckboxesList(listofCheckedBoxes);
   }
 
   render() {
-    debugger;
     let checkBoxList = this.props.checkBoxData.map((obj, index) => {
-      return <label><Checkbox value={obj.keyName}/> {obj.displayName} </label>
+      return <label key={index.toString()+this.props.name}><Checkbox value={obj.keyName}/> {obj.displayName} </label>
     });
     return <div>
           <CheckboxGroup name={this.props.name} value={this.state.selectedCheckboxes} 

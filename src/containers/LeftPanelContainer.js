@@ -11,39 +11,26 @@ import LeftPanel from './../components/leftpanel/LeftPanel';
 class LeftPanelContainer extends React.Component {
 
     getSelectedCountriesList(listOfSelectedCountries) {
-        //this.setState({countries: listOfSelectedCountries});
-        debugger;
-        this.props.actions.updateCountriesList(listOfSelectedCountries);
-      };
-    
-      getSelectedStatesList(listOfSelectedStates) {
-        //this.setState({states: listOfSelectedStates});
-        debugger;
-        this.props.actions.updateStatesList(listOfSelectedStates);
-      };
-    
-      getSelectedCitiesList(listOfSelectedCities) {
-        //this.setState({cities: listOfSelectedCities}); 
-        this.props.actions.updateCitiesList(listOfSelectedCities);
+     this.props.actions.updateCountriesList(listOfSelectedCountries);
+    };
 
-        debugger;
-      };
-    
-      getSelectedYearOfBirthList(listOfSelectedBirthYears) {
-        //this.setState({yearofbirth: listOfSelectedBirthYears});
-        debugger;
-        this.props.actions.updateDateOfBirthList(listOfSelectedBirthYears);
-      };
-    
-      getSelectedYearOfDeathList(listOfSelectedDeathYears) {
-        //this.setState({yearofdeath: listOfSelectedDeathYears});
-        debugger;
-        this.props.actions.updateDateOfDeathList(listOfSelectedDeathYears);
-      };
+    getSelectedStatesList(listOfSelectedStates) {
+     this.props.actions.updateStatesList(listOfSelectedStates);
+    };
+
+    getSelectedCitiesList(listOfSelectedCities) {
+     this.props.actions.updateCitiesList(listOfSelectedCities);
+    };
+
+    getSelectedYearOfBirthList(listOfSelectedBirthYears) {
+     this.props.actions.updateDateOfBirthList(listOfSelectedBirthYears);
+    };
+
+    getSelectedYearOfDeathList(listOfSelectedDeathYears) {
+     this.props.actions.updateDateOfDeathList(listOfSelectedDeathYears);
+    };
 
   render() {
-      debugger;
-      this.props.listOfSelectedCities;
     return (
       <div>
         {<LeftPanel
@@ -52,6 +39,11 @@ class LeftPanelContainer extends React.Component {
             getSelectedCitiesList={this.getSelectedCitiesList.bind(this)}
             getSelectedYearOfBirthList={this.getSelectedYearOfBirthList.bind(this)}
             getSelectedYearOfDeathList={this.getSelectedYearOfDeathList.bind(this)}
+            updatedlistOfSelectedCountries={this.props.listOfSelectedCountries}
+            updatedlistOfSelectedCities={this.props.listOfSelectedCities}
+            updatedlistOfSelectedDateOfBirth={this.props.listOfSelectedDateOfBirth}
+            updatedlistOfSelectedDateOfDeath={this.props.listOfSelectedDateOfDeath}
+            updatedlistOfSelectedStates={this.props.listOfSelectedStates}
         /> }
     </div>
     );
@@ -59,13 +51,12 @@ class LeftPanelContainer extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    debugger;
   return {
-    listOfSelectedCities: state.cities,
-    listOfSelectedCountries: state.countries,
-    listOfSelectedDateOfBirth: state.dateofbirth,
-    listOfSelectedDateOfDeath: state.dateofdeath,
-    listOfSelectedStates: state.states
+    listOfSelectedCountries: state.country,
+    listOfSelectedCities: state.city,
+    listOfSelectedDateOfBirth: state.dateOfBirth,
+    listOfSelectedDateOfDeath: state.dateOfDeath,
+    listOfSelectedStates: state.state
   };
 }
 
