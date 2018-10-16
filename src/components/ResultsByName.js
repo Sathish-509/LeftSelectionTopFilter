@@ -4,14 +4,16 @@ import SearchFilterContainer from '../containers/SearchFilterContainer';
 class ResultsByName extends React.Component {
   /* istanbul ignore next */
   render() {
-    return <div className="wrapper">
-    <aside className="main_sidebar">
-        <LeftPanelContainer/>
-    </aside>
-    <div>
-      <SearchFilterContainer/>
-    </div>
-</div>
+    return (
+      <div className="wrapper">
+        <div>
+          <SearchFilterContainer />
+        </div>
+        <aside className="main_sidebar">
+          <LeftPanelContainer />
+        </aside>
+      </div>
+    );
   }
 }
 export default ResultsByName;
