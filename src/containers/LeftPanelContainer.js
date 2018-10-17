@@ -1,8 +1,8 @@
 import React from 'react';
 import * as cityActions from './../actions/cityActions';
 import * as countryActions from './../actions/countryActions';
-import * as dateOfBirthActions from './../actions/dateofBirthActions';
-import * as dateOfDeathActions from './../actions/dateofDeathActions';
+import * as dateOfBirthActions from './../actions/dateOfBirthActions';
+import * as dateOfDeathActions from './../actions/dateOfDeathActions';
 import * as stateActions from './../actions/stateActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
