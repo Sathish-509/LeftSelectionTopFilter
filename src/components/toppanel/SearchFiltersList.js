@@ -67,21 +67,27 @@ class SearchFiltersList extends React.Component {
   }
 
   updateFilterList(nextPropValues, field) {
-    let listOfFilterValues = this.state.filterList;
-    let addedCountries = nextPropValues.filter(item => {
-      // if (listOfFilterValues.indexOf(`${field}:${item}`) === -1) {
-      //   return item;
-      // }
-      return listOfFilterValues.indexOf(`${field}:${item}`) === -1
-        ? item
-        : null;
-    });
-    let keyValueList = addedCountries.map(item => {
-      return `${field}:${item}`;
-    });
-    this.setState(prevState => ({
-      filterList: prevState.filterList.concat(keyValueList)
-    }));
+    if ( this.state.filterList && nextPropValues.length > this.state.filterList.length) {
+      let listOfFilterValues = this.state.filterList;
+      let addedCountries = nextPropValues.filter(item => {
+        return listOfFilterValues.indexOf(`${field}:${item}`) === -1
+          ? item
+          : null;
+      });
+      let keyValueList = addedCountries.map(item => {
+        return `${field}:${item}`;
+      });
+      this.setState(prevState => ({
+        filterList: prevState.filterList.concat(keyValueList)
+      }));
+    } else {
+      let keyValueList = nextPropValues.map(item => {
+        return `${field}:${item}`;
+      });
+      this.setState({
+        filterList: keyValueList
+      });
+    }
   }
 
   tagsInputChange(output) {
