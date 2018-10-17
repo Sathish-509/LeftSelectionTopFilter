@@ -6,13 +6,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        {/* <header className="App-header">
           <h2>Left Selection Top Filter</h2>
-        </header>
+        </header> */}
         <div className="center">
-          <ResultsByName/>  
+          <ResultsByName />
         </div>
-        </div>
+      </div>
     );
   }
 }
